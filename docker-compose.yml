@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+ archlinux:
+    build:
+      context: .
+    image: archlinux-base:latest
+    platform: linux/riscv64
+    volumes:
+      - "./workspace:/root/workspace"
