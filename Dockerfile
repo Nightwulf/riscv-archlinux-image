@@ -1,5 +1,7 @@
 FROM riscfive/archlinux
 
+ARG VERSION="0.12.0-dev.3644+05d975576"
+
 WORKDIR /root
 
 RUN rm -rf /etc/pacman.d/gnupg/*
@@ -18,10 +20,10 @@ RUN pacman -S --noconfirm base-devel cmake gcc gcc-libs go nodejs jdk-openjdk py
 
 
 # Install Zig
-RUN wget https://ziglang.org/builds/zig-linux-riscv64-0.12.0-dev.3493+3661133f9.tar.xz && \
-    tar -xf zig-linux-riscv64-0.12.0-dev.3493+3661133f9.tar.xz -C /usr/local/share && \
-    ln -s /usr/local/share/zig-linux-riscv64-0.12.0-dev.3493+3661133f9/zig /usr/local/bin/zig && \
-    rm -rf zig-linux-riscv64-0.12.0-dev.3493+3661133f9.tar.xz
+RUN wget https://ziglang.org/builds/zig-linux-riscv64-$VERSION.tar.xz && \
+    tar -xf zig-linux-riscv64-$VERSION.tar.xz -C /usr/local/share && \
+    ln -s /usr/local/share/zig-linux-riscv64-$VERSION/zig /usr/local/bin/zig && \
+    rm -rf zig-linux-riscv64-$VERSION.tar.xz
 
 
 CMD ["/bin/bash"]
