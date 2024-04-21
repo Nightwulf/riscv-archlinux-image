@@ -1,6 +1,6 @@
 FROM riscfive/archlinux
 
-ARG VERSION="0.12.0-dev.3644+05d975576"
+ARG VERSION="0.12.0"
 
 WORKDIR /root
 
@@ -20,7 +20,7 @@ RUN pacman -S --noconfirm base-devel cmake gcc gcc-libs go nodejs jdk-openjdk py
 
 
 # Install Zig
-RUN wget https://ziglang.org/builds/zig-linux-riscv64-$VERSION.tar.xz && \
+RUN wget https://ziglang.org/download/$VERSION/zig-linux-riscv64-$VERSION.tar.xz && \
     tar -xf zig-linux-riscv64-$VERSION.tar.xz -C /usr/local/share && \
     ln -s /usr/local/share/zig-linux-riscv64-$VERSION/zig /usr/local/bin/zig && \
     rm -rf zig-linux-riscv64-$VERSION.tar.xz
