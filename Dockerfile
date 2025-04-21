@@ -1,6 +1,6 @@
 FROM riscfive/archlinux
 
-ARG VERSION="0.15.0-dev.14+21620f3c6"
+ARG VERSION="0.15.0-dev.377+f01833e03"
 
 WORKDIR /root
 
