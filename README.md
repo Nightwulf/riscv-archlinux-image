@@ -12,3 +12,5 @@ To build, just issue the following commands (docker and docker-compose needs to 
 Remember to remove any existing images from your docker instance by issuing a `docker rmi` command!
 
 Hint: the image contains the programming language "Zig" which currently is best to use with nightly build images. At the top of the dockerfile there is a version variable. Just change that to the version of Zig you would like to be installed.
+To add other languages, simply clone the repository and change the Dockerfile accordingly.
+
