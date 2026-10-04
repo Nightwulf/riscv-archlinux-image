@@ -1,8 +1,10 @@
 FROM riscfive/archlinux
 
-ARG VERSION="0.16.0-dev.234+32a1aabff"
+ARG VERSION="0.17.0"
 
 WORKDIR /root
+
+RUN sed -i 's/#DisableSandbox/DisableSandbox/' /etc/pacman.conf
 
 RUN rm -rf /etc/pacman.d/gnupg/*
 
